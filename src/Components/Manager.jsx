@@ -166,7 +166,6 @@ const Manager = () => {
                 className="rounded-full border border-green-500 text-black py-1 p-4 w-full"
                 name="password"
                 required
-                onClick={savePassword}
               />
               <span
                 className="absolute right-[4px] top-[4px]"
@@ -201,7 +200,8 @@ const Manager = () => {
             </div>
           )}
           {passwordArray.length != 0 && (
-            <table className="table-auto w-full overflow-hidden rounded-md mb-6">
+            <div className="overflow-x-auto w-full">
+            <table className="table-auto w-full rounded-md mb-6">
               <thead className="bg-green-600 text-white">
                 <tr>
                   <th className="py-2">Site</th>
@@ -215,8 +215,8 @@ const Manager = () => {
                   return (
                     <tr key={index}>
                       <td className="py-2 border border-white text-center w-32">
-                        <div className="flex justify-center items-center gap-2">
-                          <a href={item.site} target="_blank">
+                        <div className="flex justify-center items-center gap-2 break-words">
+                          <a href={item.site} target="_blank" className="break-words">
                             {item.site}
                           </a>
                           <span
@@ -232,7 +232,7 @@ const Manager = () => {
                         </div>
                       </td>
                       <td className="py-1 border border-white text-center w-32">
-                        <div className="flex justify-center items-center gap-2">
+                        <div className="flex justify-center items-center gap-2 break-words">
                           {item.username}
                           <span
                             className="cursor-pointer"
@@ -247,8 +247,8 @@ const Manager = () => {
                         </div>
                       </td>
                       <td className="py-1 border border-white text-center w-32">
-                        <div className="flex justify-center items-center gap-2">
-                          {item.password}
+                        <div className="flex justify-center items-center gap-2 break-words">
+                          {"*".repeat(item.password.length)}
                           <span
                             className="cursor-pointer"
                             onClick={() => copyText(item.password)}
@@ -261,6 +261,8 @@ const Manager = () => {
                           </span>
                         </div>
                       </td>
+
+                    {/* Actions  */}
                       <td className="py-1 border border-white text-center w-32">
                         <div className="flex justify-center items-center">
                           <span
@@ -290,6 +292,7 @@ const Manager = () => {
                 })}
               </tbody>
             </table>
+            </div>
           )}
         </div>
       </div>
