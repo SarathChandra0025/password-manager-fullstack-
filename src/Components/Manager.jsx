@@ -201,7 +201,7 @@ const Manager = () => {
           )}
           {passwordArray.length != 0 && (
             <div className="overflow-x-auto w-full">
-            <table className="table-auto w-full rounded-md mb-6">
+            <table className="table-auto w-full rounded-md mb-6 ">
               <thead className="bg-green-600 text-white">
                 <tr>
                   <th className="py-2">Site</th>
@@ -214,7 +214,7 @@ const Manager = () => {
                 {passwordArray.map((item, index) => {
                   return (
                     <tr key={index}>
-                      <td className="py-2 border border-white text-center w-32">
+                      <td className="py-2 border border-white text-center w-32 pl-3">
                         <div className="flex justify-center items-center gap-2 break-words">
                           <a href={item.site} target="_blank" className="break-words">
                             {item.site}
@@ -231,7 +231,7 @@ const Manager = () => {
                           </span>
                         </div>
                       </td>
-                      <td className="py-1 border border-white text-center w-32">
+                      <td className="py-1 border border-white text-center w-32 p-2">
                         <div className="flex justify-center items-center gap-2 break-words">
                           {item.username}
                           <span
@@ -246,7 +246,7 @@ const Manager = () => {
                           </span>
                         </div>
                       </td>
-                      <td className="py-1 border border-white text-center w-32">
+                      <td className="py-1 border border-white text-center w-32 p-3">
                         <div className="flex justify-center items-center gap-2 break-words">
                           {"*".repeat(item.password.length)}
                           <span
@@ -263,7 +263,7 @@ const Manager = () => {
                       </td>
 
                     {/* Actions  */}
-                      <td className="py-1 border border-white text-center w-32">
+                      <td className="py-1 border border-white text-center w-32 px-3 ">
                         <div className="flex justify-center items-center">
                           <span
                             className="mx-3 cursor-pointer"
@@ -279,7 +279,7 @@ const Manager = () => {
                             onClick={() => deletePassword(item.id)}
                             className="cursor-pointer"
                           >
-                            <lord-icon
+                            <lord-icon className="mr-2"
                               src="https://cdn.lordicon.com/skkahier.json"
                               trigger="hover"
                               style={{ width: "17px", height: "17px" }}
